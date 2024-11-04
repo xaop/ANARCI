@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  anarci:
+    build: .
+    container_name: anarci_container
+    volumes:
+      - .:/app
+      - ./fasta_files:/app/fasta_files
+    working_dir: /app
+    platform: linux/amd64

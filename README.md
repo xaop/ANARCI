@@ -26,6 +26,35 @@ ANARCI -i myfile.fasta
 
 * Please note that while ANARCI uses alignment to species V and J germlines to determine the species of the antibody for purposes of numbering, we do not recommend using ANARCI as your primary species annotation tool
 
+# Docker setup
+
+Requirements: 
+ - Docker installed on your system (tested with docker 27.2.0)
+ - Docker-compose installed on your system (tested with docker-compose v2.29.2-desktop.2)
+
+* Create the docker container
+```
+docker-compose up
+```
+
+* Connect to the docker container
+```
+docker exec -it <container_id> /bin/bash
+```
+
+* Execute ANARCI inside of the container (example)
+```
+python /app/bin/anarci -i EVQLQQSGAEVVRSGASVKLSCTASGFNIKDYYIHWVKQRPEKGLEWIGWIDPEIGDTEYVPKFQGKATMTADTSSNTAYLQLSSLTSEDTAVYYCNAGHDYDRGRFPYWGQGTLVTVSA
+```
+
+* Adding fasta files to the docker container
+
+The docker-compose file mounts the fasta_files directory in the docker container. You can add fasta files to the fasta_files directory on your computer and use the fasta files in the container.
+```
+python /app/bin/anarci -i /app/fasta_files/myfile.fasta
+```
+
+
 # Installation
 
 The easiest way to install ANARCI and its dependencies is using conda

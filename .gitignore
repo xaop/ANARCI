@@ -4,3 +4,5 @@ build_pipeline/curated_alignments
 build_pipeline/HMMs
 build_pipeline/__pycache__
 build/
+anarci.egg-info/
+fasta_files/
